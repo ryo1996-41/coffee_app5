@@ -55,13 +55,13 @@ class UsersController < ApplicationController
     @user = User.find_by(id:params[:id])
     if @user.destroy
     session[:user_id]=nil
-    redirect_to("/users/login_form")
+    redirect_to("/top")
   end
   end
 
   def logout
     session[:user_id]=nil
-    redirect_to("/users/login_form")
+    redirect_to("/top")
   end
 
 private
