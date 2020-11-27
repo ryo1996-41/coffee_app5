@@ -1,0 +1,21 @@
+<div class = "login-wrapper">
+  <div class = "container">
+    <div class="login-width">
+      <div class = "login-title">
+        <h4>ログイン</h4>
+      </div>
+
+      <div class = "login_form">
+        <%=form_with model:@user,url:"/users/login",method:'POST',local:true do |form| %>
+        <p>メールアドレス</p>
+        <%=form.text_field:email%>
+        <p>パスワード</p>
+        <%=form.password_field:password%>
+        <div class = "reserve">
+          <%=form.submit "ログイン"%>
+        </div>
+          <%end%>
+      </div>
+    </div>
+  </div>
+</div>

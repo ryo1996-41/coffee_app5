@@ -1,0 +1,36 @@
+<div class="show-main">
+  <div class="container">
+    <div class="post-show-width">
+      <div class="post-show-info">
+        <div class="post-user-info">
+          <%=image_tag(@user.avatar)%>
+          <%=link_to(@user.name,"/users/#{@user.id}",class:"underline post-name")%>
+        </div>
+        <div class="post-image">
+          <%=image_tag(@post.image)%><br>
+        </div>
+        <div class="show-detail">
+          <p><%=@post.region%></p>
+          <p><%=@post.roast%></p>
+          <p><%=@post.content%></p>
+          <span id="star-rate-<%= @post.id %>"></span>
+          <script>
+            $('#star-rate-<%= @post.id %>').raty({
+              size: 36,
+              starOff: "<%= asset_path('star-off.png') %>",
+              starOn: "<%= asset_path('star-on.png') %>",
+              starHalf: "<%= asset_path('star-half.png') %>",
+              half: true,
+              readOnly: true,
+              score: <%= @post.rate %>,
+            });
+          </script>
+          <%= @post.rate %>
+        </div>
+        <div class="show-edit">
+          <%=link_to("編集","/posts/#{@post.id}/edit",class:"underline show-edit-btn")%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

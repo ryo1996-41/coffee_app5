@@ -1,0 +1,118 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ログイン,新規登録
+.login-wrapper{
+}
+.container {
+  margin: 70px auto 0 auto;
+  width: 60%;
+  //background-color: whitesmoke;
+.login_form p,.new-form,.post-form p{
+    margin-top:15px;
+  }
+  input{
+    width: 50%;
+  }
+  .reserve input {
+    font-weight: bold;
+    margin-top: 30px;
+    width: auto;
+    background-color:#0000FF;
+    color: white;
+    border-radius: 10%;
+    padding: 10px;
+    border: none;
+  }
+}
+.login-width,.edit-width,.new-width,.post-width,.index-width,.post-show-width,.user-show-width{
+  padding-left: 150px;
+}
+
+.login-title ,.new-title ,.index-title,.post-title,.edit-title {
+  border-left: thick solid #0000FF;
+  margin-bottom: 40px;
+  font-size:25px;
+  padding-left: 10px;
+}
+
+// index
+.index-width,.post-width,.post-show-width{
+  width: 70%;
+}
+.user-index,.post-info,.post-show-info{
+  background-color:#FEFEFE;
+  box-shadow: 0 2px 6px #c1ced7;
+  padding-top: 10px;
+  .index-image{
+    margin-right:20px;
+  }
+}
+.show-image img,.index-image img{
+  width: 130px;
+  height:130px;
+  border-radius: 50%;
+}
+.index-image,.index-detail{
+  display: inline-block;
+}
+.index-detail{
+  vertical-align: top;
+  padding-top: 10px;
+  .index-name{
+  font-size: 20px;
+  font-weight: bold;
+  color: #040404;
+}
+}
+.index-introduce {
+    margin-top: 5px;
+}
+//ユーザー詳細
+.show-info{
+  margin-bottom: 40px;
+  border-bottom: solid thin #CBCBCB;
+  padding-bottom: 40px;
+}
+.show-image,.show-detail,.edit,.user-destroy{
+  display: inline-block;
+}
+.show-image{
+  vertical-align: bottom;
+}
+.show-detail{
+  vertical-align: top;
+  margin-left: 40px;
+  h2{
+    margin-bottom: 15px;
+  }
+}
+.edit{
+    margin-top: 30px;
+}
+.edit-btn{
+  background-color: #00CC00;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10%;
+}
+.posts-detail{
+  display: inline-block;
+  img{
+    width:30%;
+    height:auto;
+  }
+}
+.post-all{
+  padding-bottom: 40px;
+}
+.user-show-width{
+  border-bottom: solid thin  #CBCBCB;
+}
+.footer{
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  color: #929292;
+}

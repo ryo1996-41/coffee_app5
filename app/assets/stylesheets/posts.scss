@@ -1,0 +1,67 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ユーザー一覧
+.post-image {
+  p{
+    padding: 10px 0 10px 0;
+    font-weight: bold;
+  }
+
+  img{
+    height:100%;
+    width: 100%;
+  }
+}
+
+.post-user-info {
+  border-bottom: thin solid #E2E2E2;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  .post-name{
+    vertical-align: top;
+    margin-left: 10px;
+    color: #040404;
+    font-weight: bold;
+    // padding-top: 10px;
+  }
+}
+.post-info{
+  margin-bottom: 50px;
+}
+.post-detail{
+  padding-bottom: 25px;
+  .seemore{
+    text-align: right;
+  }
+}
+.seemore-font{
+  color: #8b8886;
+  font-family: Arial, "ヒラギノ角ゴ Pro W3";
+  padding-right: 10px;
+}
+.post-time{
+  color: #8b8886;
+  font-family: Arial, "ヒラギノ角ゴ Pro W3";
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+//投稿詳細
+.post-show-info{
+  padding-bottom: 50px;
+  margin-bottom: 40px;
+}
+.show-edit{
+  text-align: right;
+}
+.show-edit-btn{
+  color: #8b8886;
+  font-family: Arial, "ヒラギノ角ゴ Pro W3";
+  padding-right: 10px;
+}

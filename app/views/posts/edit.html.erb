@@ -1,0 +1,40 @@
+<div class = "edit-wrapper">
+  <div class = "container">
+    <div class="edit-width">
+      <div class="edit-info">
+        <div class = "edit-title">
+          <h4>編集</h4>
+        </div>
+        <div class = "edit-form">
+          <div class="form" id="star-edit">
+            <%= form_with model:@post,url:"#{@post.id}_update",method:'POST',local:true do |form| %>
+            <p>生産地</p>
+            <%= form.text_field :region %>
+            <p>焙煎度</p>
+            <%= form.text_field :roast %>
+            <p>テキスト</p>
+            <%= form.text_area :content%>
+            <p>画像</p>
+            <%=form.file_field :image%>
+            <p>評価</p>
+            <%=form.hidden_field:rate, id: :review_star%>
+            <script>
+      $('#star-edit').raty({
+        size     : 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        scoreName: 'post[rate]',
+        half: true,
+      });
+    </script>
+          </div>
+          <div class = "reserve">
+            <%=form.submit "保存"%>
+          </div>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

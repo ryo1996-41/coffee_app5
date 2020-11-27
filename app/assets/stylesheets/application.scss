@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html,
+body,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div {
+
+  padding: 0;
+  margin: 0;
+
+}
+
+header {
+  height: 90px;
+  line-height: 90px;
+  background-color: #DCDCDC;
+}
+
+.header-logo {
+  float:left;
+  font-size: 25px;
+  .underline{
+    color: black;
+  }
+}
+
+.header-menu li {
+  float:right;
+  list-style: none;
+  font-size: 17px;
+  margin-right:15px;
+  cursor: pointer;
+}
+.underline{
+  text-decoration: none;
+}
+  .list{
+  // background-color:#D8D8D8;
+   margin: 7px;
+  // border-radius: 9%;
+  color: #666666;
+}
+.top-width{
+  text-align: center;
+}
+.coffee-logo{
+  font-size: 100px;
+}
+.top-image{
+  margin-bottom: 60px;
+  padding-top: 20px;
+}
+.top-login-new p{
+margin-bottom: 30px;
+.entrance{
+  background-color: #424242;
+  padding: 10px 200px 10px 200px;
+  color: #fff;
+  border-radius: 3%;
+
+}
+}

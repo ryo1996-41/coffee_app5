@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CoffeeApp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <div class = "header">
+      <div class = "header-logo">
+        <h4>
+          <%=link_to("coffee_app","/top",class:"underline")%>
+        </h4>
+      </div>
+      <div class = "header-menu">
+        <%if @current_user%>
+        <ul>
+          <li>
+          <%=link_to("ログアウト","/logout",class:"underline list")%>
+          </li>
+          <li>
+            <%=link_to("ユーザー一覧","/users/index",class:"underline list")%>
+          </li>
+          <li>
+            <%=link_to("投稿一覧","/posts/index",class:"underline list")%>
+          </li>
+          <li>
+            <%=link_to("新規投稿","/posts/new",class:"underline list")%>
+          </li>
+          <li>
+            <%=link_to(@current_user.name,"/users/#{@current_user.id}",class:"underline list")%>
+          </li>
+            <%else%>
+          <li>
+            <%=link_to("新規登録","/users/new", class:"underline list")%>
+          </li>
+          <li>
+            <%=link_to("ログイン","/users/login_form",class:"underline list")%>
+          </li>
+        </ul>
+          <%end%>
+      </div>
+    </div>
+
+  </header>
+
+  <%= yield %>
+</body>
+</html>

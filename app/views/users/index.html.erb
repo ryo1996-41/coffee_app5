@@ -1,0 +1,20 @@
+<div class="index-main">
+  <div class="container">
+    <div class="index-width">
+      <div class="index-title">
+        <h4>ユーザー一覧</h4>
+      </div>
+      <% @users.each do |user| %>
+      <div class="user-index">
+        <div class="index-image">
+          <%= image_tag(user.avatar)if user.avatar.attached? %>
+        </div>
+        <div class=" index-detail">
+          <%=link_to(user.name,"/users/#{user.id}",class:"underline index-name")%><br>
+        <p class="index-introduce"> <%= user.introduce if user.introduce %></p><br>
+        </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
