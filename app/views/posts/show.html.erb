@@ -27,9 +27,11 @@
           </script>
           <%= @post.rate %>
         </div>
+        <%if @current_user.id == @user.id  %>
         <div class="show-edit">
           <%=link_to("編集","/posts/#{@post.id}/edit",class:"underline show-edit-btn")%>
         </div>
+        <%end%>
       </div>
     </div>
   </div>
