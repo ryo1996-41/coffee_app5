@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   post "posts/create"=>"posts#create"
   get 'posts/index'=>"posts#index"
   get 'posts/:id/edit'=>"posts#edit"
-  post 'posts/:id/:id_update'=>'posts#update'
   get 'posts/new'=>"posts#new"
   get 'posts/:id'=>"posts#show"
+  post "posts/:id/destroy"=>"posts#destroy"
+  post 'posts/:id/:id_update'=>'posts#update'
 
 
   post "users/create"  => "users#create"

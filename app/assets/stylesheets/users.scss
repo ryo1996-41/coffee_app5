@@ -18,6 +18,7 @@
   .reserve input {
     font-weight: bold;
     margin-top: 30px;
+    margin-bottom: 10px;
     width: auto;
     background-color:#0000FF;
     color: white;
@@ -96,6 +97,9 @@
   color: #fff;
   padding: 10px;
   border-radius: 10%;
+}
+.user-delete{
+  
 }
 .posts-detail{
   display: inline-block;

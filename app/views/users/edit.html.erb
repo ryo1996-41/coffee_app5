@@ -20,6 +20,11 @@
           <div class = "reserve">
             <%=form.submit "保存"%>
           </div>
+          <div class="user-destroy">
+            <p>
+              <%=link_to("アカウント削除","/users/#{@user.id}/destroy",class:"underline user-delete",method: "post")%>
+            </p>
+          </div>
           <%end%>
         </div>
       </div>

@@ -14,6 +14,13 @@ class PostsController < ApplicationController
 
   end
 
+  def destroy#まだ作成中
+    @post = Post.find_by(id:params[:id])
+    if @post.destroy
+    redirect_to("/posts/index")
+  end
+end
+
   def update
     @post = Post.find_by(id: params[:id])
     @post.update(post_params)

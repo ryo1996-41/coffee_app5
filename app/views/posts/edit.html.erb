@@ -33,6 +33,11 @@
             <%=form.submit "保存"%>
           </div>
           <%end%>
+          <div class="post-destroy">
+            <p>
+              <%=link_to("投稿削除","/posts/#{@post.id}/destroy",class:"underline",method: "post")%>
+            </p>
+          </div>
         </div>
       </div>
     </div>
