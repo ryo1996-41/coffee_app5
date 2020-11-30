@@ -3,6 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // ログイン,新規登録
+.login-errar-message p{
+  font-family:"ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Hiragino Kaku Gothic Pro", "MS PGothic", sans-serif;
+  color:red;
+  margin-bottom: 15px;
+}
+.presence-error-message{
+  color: red;
+  font-size: 13px;
+}
+
 .login-wrapper{
 }
 .container {
@@ -99,7 +109,7 @@
   border-radius: 10%;
 }
 .user-delete{
-  
+
 }
 .posts-detail{
   display: inline-block;

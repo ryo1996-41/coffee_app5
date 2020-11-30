@@ -10,8 +10,20 @@
             <%= form_with model:@user,url:"#{@user.id}_update",method:'POST',local:true do |form| %>
             <p>名前</p>
             <%= form.text_field :name %>
+            <span class="presence-error-message">
+              <%if @user.errors.include?(:name)%>
+              <%=@user.errors.full_messages_for(:name).first%>
+              <%end%>
+            </span>
+
             <p>メールアドレス</p>
             <%= form.email_field :email %>
+            <span class="presence-error-message">
+              <%if @user.errors.include?(:email)%>
+              <%=@user.errors.full_messages_for(:email).first%>
+              <%end%>
+            </span>
+
             <p>自己紹介</p>
             <%= form.text_area :introduce%>
             <p>画像</p>
@@ -20,12 +32,12 @@
           <div class = "reserve">
             <%=form.submit "保存"%>
           </div>
+          <%end%>
           <div class="user-destroy">
             <p>
               <%=link_to("アカウント削除","/users/#{@user.id}/destroy",class:"underline user-delete",method: "post")%>
             </p>
           </div>
-          <%end%>
         </div>
       </div>
     </div>

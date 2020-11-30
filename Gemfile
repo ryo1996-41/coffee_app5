@@ -39,3 +39,5 @@ gem 'dotenv-rails'
 
 #パスワード暗号化
 gem 'bcrypt'
+# エラーメッセージの日本語化
+gem 'rails-i18n'

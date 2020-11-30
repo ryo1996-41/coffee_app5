@@ -4,7 +4,13 @@
       <div class = "login-title">
         <h4>ログイン</h4>
       </div>
-
+      <div class="login-errar-message">
+        <%if flash[:alert]%>
+        <p>
+          <%=flash[:alert]%>
+        </p>
+        <%end%>
+      </div>
       <div class = "login_form">
         <%=form_with model:@user,url:"/users/login",method:'POST',local:true do |form| %>
         <p>メールアドレス</p>
@@ -14,7 +20,7 @@
         <div class = "reserve">
           <%=form.submit "ログイン"%>
         </div>
-          <%end%>
+        <%end%>
       </div>
     </div>
   </div>
