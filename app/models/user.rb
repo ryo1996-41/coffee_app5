@@ -1,9 +1,9 @@
 class User < ApplicationRecord
    has_secure_password
 
-   validates :name,{presence: true}
-   validates :email,{presence: true}
-   validates :password,{presence: true}
+   validates :name,{presence: true,on: :create}
+   validates :email,{presence: true,on: :create}
+   validates :password,{presence: true,on: :create}
 
 
    has_one_attached :avatar

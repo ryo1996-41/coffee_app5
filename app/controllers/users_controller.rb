@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-before_action :authenticate_user,{only:[:index,:show,:edit,:update]}
-before_action :forbid_login,{only:[:login_form,:login]}
-before_action :ensure_correct_user, {only: [:edit,:update]}
+  before_action :authenticate_user,{only:[:index,:show,:edit,:update]}
+  before_action :forbid_login,{only:[:login_form,:login,:new]}
+  before_action :ensure_correct_user, {only: [:edit,:update]}
 
   def index
     @users = User.all.order(created_at: :desc)
@@ -62,9 +62,9 @@ before_action :ensure_correct_user, {only: [:edit,:update]}
   def destroy
     @user = User.find_by(id:params[:id])
     if @user.destroy
-    session[:user_id]=nil
-    redirect_to("/top")
-  end
+      session[:user_id]=nil
+      redirect_to("/top")
+    end
   end
 
   def logout
@@ -73,8 +73,8 @@ before_action :ensure_correct_user, {only: [:edit,:update]}
     redirect_to("/top")
   end
 
-private
+  private
   def user_params
-     params.require(:user).permit(:name, :email, :avatar, :introduce,:password)
-   end
+    params.require(:user).permit(:name, :email, :avatar, :introduce,:password)
+  end
 end
