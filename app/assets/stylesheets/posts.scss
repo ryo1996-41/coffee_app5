@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// ユーザー一覧
+// 投稿一覧
 .post-image {
   p{
     padding: 10px 0 10px 0;
@@ -29,7 +29,6 @@
     margin-left: 10px;
     color: #040404;
     font-weight: bold;
-    // padding-top: 10px;
   }
 }
 .post-info{
@@ -37,6 +36,9 @@
 }
 .post-detail{
   padding-bottom: 25px;
+  p{
+    margin-left: 10px;
+  }
   .seemore{
     text-align: right;
   }
@@ -46,12 +48,27 @@
   font-family: Arial, "ヒラギノ角ゴ Pro W3";
   padding-right: 10px;
 }
+.post-content{
+  font-weight: bold;
+}
 .post-time{
   color: #8b8886;
   font-family: Arial, "ヒラギノ角ゴ Pro W3";
   font-size: 15px;
   margin-bottom: 5px;
 }
+.post-comments,.add-comments{
+  margin-top: 15px;
+  p{
+  color: #8b8886;
+  font-family: Arial, "ヒラギノ角ゴ Pro W3";
+  font-size: 15px;
+}
+}
+// .add-comments{
+//   margin-top: 30px;
+//   border-top: thin solid #E2E2E2;
+// }
 //投稿詳細
 .post-show-info{
   padding-bottom: 50px;

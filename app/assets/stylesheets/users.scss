@@ -48,7 +48,7 @@
   padding-left: 10px;
 }
 
-// index
+// ユーザー一覧
 .index-width,.post-width,.post-show-width{
   width: 70%;
 }
@@ -60,9 +60,18 @@
     margin-right:20px;
   }
 }
-.show-image img,.index-image img{
+.index-width{
+  margin-bottom: 80px;
+}
+.show-image img{
   width: 130px;
   height:130px;
+  border-radius: 50%;
+}
+.index-image img{
+  width: 100px;
+  height:100px;
+  margin-left: 10px;
   border-radius: 50%;
 }
 .index-image,.index-detail{
@@ -79,6 +88,9 @@
 }
 .index-introduce {
     margin-top: 5px;
+}
+.name-border:hover{
+  text-decoration: underline;
 }
 //ユーザー詳細
 .show-info{
@@ -99,6 +111,8 @@
     margin-bottom: 15px;
   }
 }
+
+// ユーザー編集
 .edit{
     margin-top: 30px;
 }
@@ -113,16 +127,16 @@
 }
 .posts-detail{
   display: inline-block;
+  border-bottom: solid thin  #CBCBCB;
+  padding-bottom: 30px;
   img{
     width:30%;
     height:auto;
+
   }
 }
 .post-all{
   padding-bottom: 40px;
-}
-.user-show-width{
-  border-bottom: solid thin  #CBCBCB;
 }
 .footer{
   text-align: center;

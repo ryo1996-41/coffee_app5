@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   post "users/:id/:id_update"=>"users#update"
   get 'users/:id'=>"users#show"
 
+  # post "follow/:id" => "relationships#follow", as: "follow"
+  # post "unfollow/:id" => "relationships#unfollow", as: "unfollow"
+
   get "top"=>"home#top"
   root "home#top"
 # root 'application#hello'

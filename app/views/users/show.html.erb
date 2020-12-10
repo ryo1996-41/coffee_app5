@@ -7,7 +7,9 @@
         </div>
         <div class="show-detail">
           <h2>  <%=@user.name%></h2>
+          <%if @current_user.id == @user.id  %>
           <p><%=@user.email%></p>
+          <%end%>
           <%=@user.introduce if @user.introduce%><br>
           <%if @current_user.id == @user.id  %>
           <div class="edit">
