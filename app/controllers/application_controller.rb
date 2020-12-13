@@ -36,4 +36,5 @@ def ensure_correct_post_user
   redirect_to("/users/index")
 end
 end
+
 end
