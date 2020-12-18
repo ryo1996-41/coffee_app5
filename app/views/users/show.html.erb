@@ -14,11 +14,12 @@
             <%= render 'users/stats' %>
           </span>
           <%= render 'users/follow_form' %>
-          
+          <div class="personal">
           <%if @current_user.id == @user.id  %>
           <p><%=@user.email%></p>
           <%end%>
           <%=@user.introduce if @user.introduce%><br>
+          </div>
           <%if @current_user.id == @user.id  %>
           <div class="edit">
             <p>
