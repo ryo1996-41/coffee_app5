@@ -111,6 +111,30 @@
     margin-bottom: 15px;
   }
 }
+.stats{
+  display:inline-block;
+  margin-bottom: 5px;
+  padding-left: 2px;
+  color: gray;
+}
+  .stat,.post-counts{
+    color: black;
+}
+.post-counts{
+    border-right:solid thin gray;
+    padding-right: 3px;
+}
+
+#follow_form{
+  display: inline-block;
+}
+.btn-follow{
+padding-right: 60px;
+}
+.btn-unfollow{
+  padding-right: 90px;
+}
+
 
 // ユーザー編集
 .edit{
@@ -144,3 +168,25 @@
   padding-bottom: 40px;
   color: #929292;
 }
+// .stats {
+//   overflow: auto;
+//   margin-top: 0;
+//   padding: 0;
+//   a {
+//     float: left;
+//     padding: 0 10px;
+//     border-left: 1px solid gray;
+//     color: gray;
+//     &:first-child {
+//       padding-left: 0;
+//       border: 0;
+//     }
+//     &:hover {
+//       text-decoration: none;
+//       color: blue;
+//     }
+//   }
+//   strong {
+//     display: block;
+//   }
+// }

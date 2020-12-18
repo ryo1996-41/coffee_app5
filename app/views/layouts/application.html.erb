@@ -30,7 +30,8 @@
             <%=link_to("ユーザー一覧","/users/index",class:"underline list")%>
           </li>
           <li>
-            <%=link_to("投稿一覧","/posts/index",class:"underline list")%>
+            <%=link_to("投稿一覧","/posts/index",class:"underline list head-post-btn")%>
+            <%=link_to("/フォロー中","/posts/#{@current_user.id}/follow_index",class:"underline list head-follow-btn")%>
           </li>
           <li>
             <%=link_to("新規投稿","/posts/new",class:"underline list")%>

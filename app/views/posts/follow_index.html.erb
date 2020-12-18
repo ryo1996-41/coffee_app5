@@ -1,0 +1,42 @@
+<div class="index-main">
+  <div class="container">
+    <div class="post-width">
+      <div class="post-index">
+        <% @users.each do |user| %>
+　　　  <% @posts = Post.where(user_id: user.id).order("created_at DESC") %>
+        <% @posts.each do |post|%>
+        <div class="post-info">
+          <div class="post-user-info">
+            <%=image_tag(post.user.avatar)%>
+            <%=link_to(post.user.name,"/users/#{post.user_id}",class:"underline post-name name-border")%><br>
+          </div>
+          <div class="post-image">
+            <p><%="《#{post.region}》"%></p>
+            <%=link_to "/posts/#{post.id}" do%>
+            <%=image_tag(post.image)if post.image.attached? %><br>
+            <%end%>
+          </div>
+          <div class="post-detail">
+            <p class="post-time">
+              <%=post.created_at.strftime("%Y-%m-%d %H:%M")%>
+            </p>
+            <p class="post-content">
+            <%=post.content%>
+            </p>
+            <div class="seemore">
+              <%=link_to("See more...","/posts/#{post.id}",class:"underline seemore-font")%>
+            </div>
+            <div class="post-comments">
+              <p>コメントを表示する</p>
+            </div>
+            <!-- <div class="add-comments">
+              <p>コメントを追加する</p>
+            </div> -->
+          </div>
+        </div>
+        <%end%>
+      <%end%>
+      </div>
+    </div>
+  </div>
+</div>

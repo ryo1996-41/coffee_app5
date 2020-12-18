@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user,{only:[:index,:show,:edit,:update]}
+  before_action :authenticate_user,{only:[:index,:show,:edit,:update,:show_follow,:show_follower]}
   before_action :forbid_login,{only:[:login_form,:login,:new]}
   before_action :ensure_correct_user, {only: [:edit,:update]}
 
@@ -73,6 +73,16 @@ class UsersController < ApplicationController
     redirect_to("/top")
   end
 
+  def show_follow
+    @user  = User.find(params[:id])
+    @users = @user.following
+  end
+
+  def show_follower
+    @user  = User.find(params[:id])
+    @users = @user.followers
+
+  end
   private
   def user_params
     params.require(:user).permit(:name, :email, :avatar, :introduce,:password)

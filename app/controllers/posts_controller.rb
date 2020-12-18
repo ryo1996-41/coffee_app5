@@ -18,7 +18,7 @@ before_action :ensure_correct_post_user,{only:[:edit,:update,:destroy]}
 
   end
 
-  def destroy#まだ作成中
+  def destroy
     @post = Post.find_by(id:params[:id])
     if @post.destroy
     redirect_to("/posts/index")
@@ -47,6 +47,10 @@ end
     else
       render("posts/new")
     end
+  end
+
+  def follow_index
+    @users = User.find_by(id:params[:id]).following
   end
 
   private
