@@ -23,14 +23,14 @@ Rails.application.routes.draw do
   get 'users/:id'=>"users#show"
   get "users/:id/show_follow" => "users#show_follow"
   get "users/:id/show_follower" => "users#show_follower"
+  get "users/:id/show_likes"=>"users#show_likes"
   resources :users do
    member do
      get :following, :followers
    end
  end
 
- get "users/:id/show_likes"=>"users#show_likes"
- post "likes/:id/destroy"=>"likes#destroy"
+ delete "likes/:id/destroy"=>"likes#destroy"
  post "likes/:id/create"=>"likes#create"
 
  # resources :posts do
