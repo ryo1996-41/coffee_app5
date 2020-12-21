@@ -3,7 +3,7 @@
     <div class="post-width">
       <div class="post-index">
         <% @users.each do |user| %>
-　　　  <% @posts = Post.where(user_id: user.id).order("created_at DESC") %>
+        <% @posts = Post.where(user_id: user.id).order("created_at DESC") %>
         <% @posts.each do |post|%>
         <div class="post-info">
           <div class="post-user-info">
@@ -20,8 +20,31 @@
             <p class="post-time">
               <%=post.created_at.strftime("%Y-%m-%d %H:%M")%>
             </p>
+
+            <!--いいね-->
+            <% if @current_user %>
+            <% if post.liked_by?(@current_user) %> <!-- ログインしているユーザーがファボしているか否か -->
+            <p>
+              <%=link_to "/likes/#{post.id}/destroy", method: :post,class:"underline" do %>
+              <span class="fas fa-heart like-btn"></span><!--ファボ済み -->
+              <%end%>
+              <span><%=post.likes.count%></span>
+            </p>
+            <% else %>
+            <p>
+              <%=link_to "/likes/#{post.id}/create", method: :post,class:"underline" do %>
+              <span class="far fa-heart like-btn"></span><!--ファボしてない-->
+              <%end%>
+              <span><%=post.likes.count%></span>
+            </p>
+            <% end %>
+            <% else %>
+            <p><span>お気に入り数 </span><%= post.likes.count %></p>
+            <% end %>
+            
+            <!--投稿内容-->
             <p class="post-content">
-            <%=post.content%>
+              <%=post.content%>
             </p>
             <div class="seemore">
               <%=link_to("See more...","/posts/#{post.id}",class:"underline seemore-font")%>
@@ -30,13 +53,13 @@
               <p>コメントを表示する</p>
             </div>
             <!-- <div class="add-comments">
-              <p>コメントを追加する</p>
-            </div> -->
-          </div>
+            <p>コメントを追加する</p>
+          </div> -->
         </div>
-        <%end%>
-      <%end%>
       </div>
+      <%end%>
+      <%end%>
     </div>
   </div>
+</div>
 </div>

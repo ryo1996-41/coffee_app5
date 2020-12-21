@@ -6,10 +6,16 @@
           <%=image_tag(@user.avatar)%>
           <%=link_to(@user.name,"/users/#{@user.id}",class:"underline post-name")%>
         </div>
+
         <div class="post-image">
           <%=image_tag(@post.image)%><br>
         </div>
         <div class="show-detail">
+          <p class="post-time"><%=@post.created_at.strftime("%Y-%m-%d %H:%M")%></p>
+          <p>
+            <span class="fas fa-heart like-btn"></span>
+            <%=@likes.count%>
+          </p>
           <p><%=@post.region%></p>
           <p><%=@post.roast%></p>
           <p><%=@post.content%></p>

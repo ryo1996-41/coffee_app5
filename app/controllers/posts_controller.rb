@@ -10,6 +10,7 @@ before_action :ensure_correct_post_user,{only:[:edit,:update,:destroy]}
   def show
     @post = Post.find_by(id: params[:id])
     @user = @post.user
+    @likes = @post.likes
 
   end
 

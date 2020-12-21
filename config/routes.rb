@@ -29,6 +29,14 @@ Rails.application.routes.draw do
    end
  end
 
+ get "users/:id/show_likes"=>"users#show_likes"
+ post "likes/:id/destroy"=>"likes#destroy"
+ post "likes/:id/create"=>"likes#create"
+
+ # resources :posts do
+ #   resource :likes, only: [:create, :destroy]
+ # end
+
   # post "follow/:id" => "relationships#follow", as: "follow"
   # post "unfollow/:id" => "relationships#unfollow", as: "unfollow"
 

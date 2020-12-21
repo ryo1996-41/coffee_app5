@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     @posts = @user.posts
+    @posts_likes = @user.post_likes
   end
 
 
@@ -83,6 +84,12 @@ class UsersController < ApplicationController
     @users = @user.followers
 
   end
+
+  def show_likes
+    @user = User.find_by(id:params[:id])
+    @posts_likes = @user.post_likes
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :avatar, :introduce,:password)

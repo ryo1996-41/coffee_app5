@@ -8,12 +8,15 @@ class User < ApplicationRecord
    has_one_attached :avatar
 
    has_many :posts,:dependent=> :destroy
+   #いいね機能
+   has_many :likes,:dependent=> :destroy
+   has_many :post_likes,through: :likes, source: :post
 
 # ====================自分がフォローしているユーザーとの関連 =============
    has_many :active_relationships,class_name: "Relationship",foreign_key: "follower_id",dependent: :destroy
    has_many :following, through: :active_relationships, source: :followed
 
-# ====================自分がフォローされるユーザーとの関連 ===============   
+# ====================自分がフォローされるユーザーとの関連 ===============
    has_many :passive_relationships,class_name: "Relationship",foreign_key: "followed_id",dependent: :destroy
    has_many :followers, through: :passive_relationships, source: :follower
 

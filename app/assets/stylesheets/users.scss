@@ -94,7 +94,6 @@
 }
 //ユーザー詳細
 .show-info{
-  margin-bottom: 40px;
   border-bottom: solid thin #CBCBCB;
   padding-bottom: 40px;
 }
@@ -149,7 +148,7 @@ padding-right: 60px;
 .user-delete{
 
 }
-.posts-detail{
+.posts-detail,.likes-detail{
   display: inline-block;
   border-bottom: solid thin  #CBCBCB;
   padding-bottom: 30px;
@@ -159,9 +158,28 @@ padding-right: 60px;
 
   }
 }
-.post-all{
+.post-like-head{
+  margin-bottom: 20px;
+  padding-bottom:3px;
+  padding-top: 3px;
+  border-bottom: solid thin  #CBCBCB;
+  text-align: center;
+  padding-right:80px;
+  .head-font{
+    color:gray;
+    &:hover{
+      text-decoration: underline;
+      color: black;
+    }
+  }
+  .post-head{
+    margin-right: 200px;
+  }
+}
+.post-all,.like-all{
   padding-bottom: 40px;
 }
+
 .footer{
   text-align: center;
   padding-top: 20px;

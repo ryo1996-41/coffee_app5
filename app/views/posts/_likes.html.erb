@@ -1,0 +1,22 @@
+
+<!--パーシャル化しようとしたが、each文から外れたしまったので一旦保留-->
+
+<% if @current_user %>
+<% if post.liked_by?(@current_user) %> <!-- ログインしているユーザーがファボしているか否か -->
+<p>
+  <%=link_to "/likes/#{post.id}/destroy", method: :post,class:"underline" do %>
+  <span class="fas fa-heart like-btn"></span><!--ファボ済み -->
+  <%end%>
+  <span><%=post.likes.count%></span>
+</p>
+<% else %>
+<p>
+  <%=link_to "/likes/#{post.id}/create", method: :post,class:"underline" do %>
+  <span class="far fa-heart like-btn"></span><!--ファボしてない-->
+  <%end%>
+  <span><%=post.likes.count%></span>
+</p>
+<% end %>
+<% else %>
+<p><span>お気に入り数 </span><%= post.likes.count %></p>
+<% end %>

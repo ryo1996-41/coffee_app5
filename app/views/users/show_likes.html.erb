@@ -31,24 +31,26 @@
       </div>
 
       <div class="post-like-head">
-      <strong class="post-head head-font">投稿</strong>
-      <strong class="like-head">
-        <%=link_to("いいね","/users/#{@user.id}/show_likes",class:"underline head-font")%>
+      <strong class="post-head">
+       <%=link_to("投稿","/users/#{@user.id}",class:"underline head-font")%>
+      </strong>
+      <strong class="like-head head-font">
+      いいね
       </strong>
         </div>
 
-      <div class="post-all">
-        <div class="posts-detail">
-          <% @posts.each do |post| %>
-          <%=link_to "/posts/#{post.id}" do%>
-          <%=image_tag (post.image)%>
-          <%end%>
-          <%end%>
-        </div>
-      </div>
-    </div>
-    <div class="footer">
-      <p>@coffee_app</p>
-    </div>
+<div class="like-all">
+  <div class="likes-detail">
+    <% @posts_likes.each do |post_like| %>
+    <%=link_to "/posts/#{post_like.id}" do%>
+    <%=image_tag (post_like.image)%>
+    <%end%>
+    <%end%>
   </div>
+</div>
+</div>
+<div class="footer">
+<p>@coffee_app</p>
+</div>
+</div>
 </div>
