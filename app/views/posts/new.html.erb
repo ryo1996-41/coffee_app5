@@ -5,7 +5,7 @@
         <h4>投稿</h4>
       </div>
       <div class="post-wrapper">
-        <%= form_with model:@post,url:posts_create_path ,method: 'POST',local:true do |form|%>
+        <%= form_with model:@post, url:posts_create_path, method: 'POST', local:true do |form|%>
         <div class="post-form" id="star">
           <p>生産地</p>
           <%=form.text_field:region%>

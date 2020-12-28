@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-before_action :set_current_user
+  before_action :set_current_user
 
 
 
@@ -10,31 +10,31 @@ before_action :set_current_user
 
   def  authenticate_user
     if @current_user == nil
-    flash[:notice] = "ログインしてください"
-    redirect_to("/users/login_form")
-end
+      flash[:notice] = "ログインしてください"
+      redirect_to("/users/login_form")
+    end
   end
 
   def forbid_login
     if @current_user
       flash[:notice] = "すでにログインしています"
       redirect_to("/users/#{@current_user.id}")
+    end
   end
-end
 
   def ensure_correct_user
     if @current_user.id != params[:id].to_i
-    flash[:notice] = "権限がありません"
-    redirect_to("/users/index")
+      flash[:notice] = "権限がありません"
+      redirect_to("/users/index")
+    end
   end
-end
 
-def ensure_correct_post_user
-  @post = Post.find_by(id:params[:id])
-  if @current_user.id != @post.user_id
-  flash[:notice] = "権限がありません"
-  redirect_to("/users/index")
-end
-end
+  def ensure_correct_post_user
+    @post = Post.find_by(id:params[:id])
+    if @current_user.id != @post.user_id
+      flash[:notice] = "権限がありません"
+      redirect_to("/users/index")
+    end
+  end
 
 end

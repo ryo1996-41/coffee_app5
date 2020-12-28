@@ -6,11 +6,11 @@
         <div class="post-info">
           <div class="post-user-info">
             <%=image_tag(post.user.avatar)%>
-            <%=link_to(post.user.name,"/users/#{post.user_id}",class:"underline post-name name-border")%><br>
+            <%=link_to(post.user.name, "/users/#{post.user_id}", class:"underline post-name name-border") %><br>
           </div>
           <div class="post-image">
             <p><%="《#{post.region}》"%></p>
-            <%=link_to "/posts/#{post.id}" do%>
+            <%=link_to "/posts/#{post.id}" do %>
             <%=image_tag(post.image)if post.image.attached? %><br>
             <%end%>
           </div>
@@ -18,11 +18,11 @@
             <p class="post-time">
               <%=post.created_at.strftime("%Y-%m-%d %H:%M")%>
             </p>
-<!--いいね-->
+            <!--いいね-->
             <% if @current_user %>
             <% if post.liked_by?(@current_user) %> <!-- ログインしているユーザーがファボしているか否か -->
             <p>
-              <%=link_to "/likes/#{post.id}/destroy", method: :delete,class:"underline" do %>
+              <%=link_to "/likes/#{post.id}/destroy", method: :delete, class:"underline" do %>
               <span class="fas fa-heart like-btn"></span><!--ファボ済み -->
               <%end%>
               <span><%=post.likes.count%></span>
@@ -38,12 +38,12 @@
             <% else %>
             <p><span>お気に入り数 </span><%= post.likes.count %></p>
             <% end %>
-<!--投稿内容-->
+            <!--投稿内容-->
             <p class="post-content">
               <%=post.content%>
             </p>
             <div class="seemore">
-              <%=link_to("See more...","/posts/#{post.id}",class:"underline seemore-font")%>
+              <%=link_to("See more...", "/posts/#{post.id}", class:"underline seemore-font") %>
             </div>
             <div class="post-comments">
               <p>コメントを表示する</p>

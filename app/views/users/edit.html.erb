@@ -7,7 +7,7 @@
         </div>
         <div class = "edit-form">
           <div class="form">
-            <%= form_with model:@user,url:"#{@user.id}_update",method:'POST',local:true do |form| %>
+            <%= form_with model:@user, url:"#{@user.id}_update", method:'POST', local:true do |form| %>
             <p>名前</p>
             <%= form.text_field :name %>
             <span class="presence-error-message">
@@ -35,7 +35,7 @@
           <%end%>
           <div class="user-destroy">
             <p>
-              <%=link_to("アカウント削除","/users/#{@user.id}/destroy",class:"underline user-delete",method: "post")%>
+              <%=link_to("アカウント削除", "/users/#{@user.id}/destroy", class:"underline user-delete", method: "post") %>
             </p>
           </div>
         </div>

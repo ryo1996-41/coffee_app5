@@ -2,12 +2,12 @@
 <div class="stats">
   <a href="<%= following_user_path(@user) %>">
     <strong>
-      <%=link_to("#{@user.following.count}フォロー","/users/#{@user.id}/show_follow",class:"stat underline")%>
+      <%=link_to("#{@user.following.count}フォロー","/users/#{@user.id}/show_follow", class:"stat underline") %>
     </strong>
   </a>
   <a href="<%= followers_user_path(@user) %>">
     <strong>
-      <%=link_to("#{@user.followers.count}フォロワー","/users/#{@user.id}/show_follower",class:"stat underline")%>
+      <%=link_to("#{@user.followers.count}フォロワー", "/users/#{@user.id}/show_follower", class:"stat underline") %>
     </strong>
   </a>
 </div>

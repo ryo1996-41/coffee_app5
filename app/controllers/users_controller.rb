@@ -13,7 +13,6 @@ class UsersController < ApplicationController
     @posts_likes = @user.post_likes
   end
 
-
   def new
     @user = User.new
   end
@@ -82,7 +81,6 @@ class UsersController < ApplicationController
   def show_follower
     @user  = User.find(params[:id])
     @users = @user.followers
-
   end
 
   def show_likes

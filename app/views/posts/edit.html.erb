@@ -7,7 +7,7 @@
         </div>
         <div class = "edit-form">
           <div class="form" id="star-edit">
-            <%= form_with model:@post,url:"#{@post.id}_update",method:'POST',local:true do |form| %>
+            <%= form_with model:@post, url:"#{@post.id}_update", method:'POST', local:true  do |form| %>
             <p>生産地</p>
             <%= form.text_field :region %>
             <p>焙煎度</p>
@@ -19,15 +19,15 @@
             <p>評価</p>
             <%=form.hidden_field:rate, id: :review_star%>
             <script>
-      $('#star-edit').raty({
-        size     : 36,
-        starOff:  '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
-        scoreName: 'post[rate]',
-        half: true,
-      });
-    </script>
+              $('#star-edit').raty({
+                size     : 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                scoreName: 'post[rate]',
+                half: true,
+              });
+            </script>
           </div>
           <div class = "reserve">
             <%=form.submit "保存"%>
@@ -35,7 +35,7 @@
           <%end%>
           <div class="post-destroy">
             <p>
-              <%=link_to("投稿削除","/posts/#{@post.id}/destroy",class:"underline",method: "post")%>
+              <%=link_to("投稿削除", "/posts/#{@post.id}/destroy", class:"underline", method: "post") %>
             </p>
           </div>
         </div>

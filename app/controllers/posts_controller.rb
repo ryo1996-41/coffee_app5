@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-before_action :authenticate_user
-before_action :ensure_correct_post_user,{only:[:edit,:update,:destroy]}
+  before_action :authenticate_user
+  before_action :ensure_correct_post_user,{only:[:edit,:update,:destroy]}
 
 
   def index
@@ -11,20 +11,18 @@ before_action :ensure_correct_post_user,{only:[:edit,:update,:destroy]}
     @post = Post.find_by(id: params[:id])
     @user = @post.user
     @likes = @post.likes
-
   end
 
   def edit
     @post = Post.find_by(id: params[:id])
-
   end
 
   def destroy
     @post = Post.find_by(id:params[:id])
     if @post.destroy
-    redirect_to("/posts/index")
+      redirect_to("/posts/index")
+    end
   end
-end
 
   def update
     @post = Post.find_by(id: params[:id])

@@ -6,7 +6,7 @@
       </div>
       <div class = "new-form">
         <div class="form">
-          <%= form_with model:@user,url:users_create_path ,method: 'POST',local:true do |form| %>
+          <%= form_with model:@user, url:users_create_path , method: 'POST', local:true do |form| %>
           <p>名前</p>
           <%= form.text_field :name %>
           <span class="presence-error-message">
@@ -35,9 +35,9 @@
             <p>画像</p>
             <%=form.file_field :avatar%>
           </div>
-      
-        <div class = "reserve">
-          <%=form.submit "新規登録"%>
+
+          <div class = "reserve">
+            <%=form.submit "新規登録"%>
           </div>
         </div>
         <%end%>

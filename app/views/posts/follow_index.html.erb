@@ -8,7 +8,7 @@
         <div class="post-info">
           <div class="post-user-info">
             <%=image_tag(post.user.avatar)%>
-            <%=link_to(post.user.name,"/users/#{post.user_id}",class:"underline post-name name-border")%><br>
+            <%=link_to(post.user.name, "/users/#{post.user_id}", class:"underline post-name name-border")%> <br>
           </div>
           <div class="post-image">
             <p><%="《#{post.region}》"%></p>
@@ -32,7 +32,7 @@
             </p>
             <% else %>
             <p>
-              <%=link_to "/likes/#{post.id}/create", method: :post,class:"underline" do %>
+              <%=link_to "/likes/#{post.id}/create", method: :post, class:"underline" do %>
               <span class="far fa-heart like-btn"></span><!--ファボしてない-->
               <%end%>
               <span><%=post.likes.count%></span>
@@ -47,7 +47,7 @@
               <%=post.content%>
             </p>
             <div class="seemore">
-              <%=link_to("See more...","/posts/#{post.id}",class:"underline seemore-font")%>
+              <%=link_to("See more...", "/posts/#{post.id}", class:"underline seemore-font") %>
             </div>
             <div class="post-comments">
               <p>コメントを表示する</p>

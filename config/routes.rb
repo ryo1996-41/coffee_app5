@@ -25,17 +25,17 @@ Rails.application.routes.draw do
   get "users/:id/show_follower" => "users#show_follower"
   get "users/:id/show_likes"=>"users#show_likes"
   resources :users do
-   member do
-     get :following, :followers
-   end
- end
+    member do
+      get :following, :followers
+    end
+  end
 
- delete "likes/:id/destroy"=>"likes#destroy"
- post "likes/:id/create"=>"likes#create"
-
- # resources :posts do
- #   resource :likes, only: [:create, :destroy]
- # end
+  delete "likes/:id/destroy"=>"likes#destroy"
+  post "likes/:id/create"=>"likes#create"
+  
+  # resources :posts do
+  #   resource :likes, only: [:create, :destroy]
+  # end
 
   # post "follow/:id" => "relationships#follow", as: "follow"
   # post "unfollow/:id" => "relationships#unfollow", as: "unfollow"
@@ -43,5 +43,5 @@ Rails.application.routes.draw do
   get "top"=>"home#top"
   root "home#top"
   resources :relationships, only: [:create, :destroy]
-# root 'application#hello'
+  # root 'application#hello'
 end

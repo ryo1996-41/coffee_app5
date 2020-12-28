@@ -23,7 +23,7 @@
           <%if @current_user.id == @user.id  %>
           <div class="edit">
             <p>
-              <%=link_to("編集","/users/#{@user.id}/edit",class:"underline edit-btn")%>
+              <%=link_to("編集", "/users/#{@user.id}/edit", class:"underline edit-btn") %>
             </p>
           </div>
           <%end%>
@@ -31,11 +31,11 @@
       </div>
 
       <div class="post-like-head">
-      <strong class="post-head head-font">投稿</strong>
-      <strong class="like-head">
-        <%=link_to("いいね","/users/#{@user.id}/show_likes",class:"underline head-font")%>
-      </strong>
-        </div>
+        <strong class="post-head head-font">投稿</strong>
+        <strong class="like-head">
+          <%=link_to("いいね", "/users/#{@user.id}/show_likes", class:"underline head-font") %>
+        </strong>
+      </div>
 
       <div class="post-all">
         <div class="posts-detail">
