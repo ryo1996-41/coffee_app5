@@ -41,3 +41,5 @@ gem 'dotenv-rails'
 gem 'bcrypt'
 # エラーメッセージの日本語化
 gem 'rails-i18n'
+#ajax機能実装
+gem 'jquery-rails'

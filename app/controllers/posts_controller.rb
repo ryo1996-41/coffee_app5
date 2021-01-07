@@ -11,6 +11,8 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @user = @post.user
     @likes = @post.likes
+    @comments = @post.comments
+    @comenter = User.all
   end
 
   def edit
@@ -54,6 +56,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:roast,:region,:content,:image,:user_id,:rate)
+    params.require(:post).permit(:roast, :region, :content, :image, :user_id, :rate)
   end
 end

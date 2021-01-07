@@ -18,6 +18,7 @@
             <p class="post-time">
               <%=post.created_at.strftime("%Y-%m-%d %H:%M")%>
             </p>
+
             <!--いいね-->
             <% if @current_user %>
             <% if post.liked_by?(@current_user) %> <!-- ログインしているユーザーがファボしているか否か -->
@@ -29,7 +30,7 @@
             </p>
             <% else %>
             <p>
-              <%=link_to "/likes/#{post.id}/create", method: :post,class:"underline" do %>
+              <%=link_to "/likes/#{post.id}/create", method: :post, class:"underline" do %>
               <span class="far fa-heart like-btn"></span><!--ファボしてない-->
               <%end%>
               <span><%=post.likes.count%></span>
@@ -38,6 +39,7 @@
             <% else %>
             <p><span>お気に入り数 </span><%= post.likes.count %></p>
             <% end %>
+
             <!--投稿内容-->
             <p class="post-content">
               <%=post.content%>
@@ -46,11 +48,10 @@
               <%=link_to("See more...", "/posts/#{post.id}", class:"underline seemore-font") %>
             </div>
             <div class="post-comments">
-              <p>コメントを表示する</p>
+              <p>
+                コメント<%= post.comments.count %>件
+              </p>
             </div>
-            <!-- <div class="add-comments">
-            <p>コメントを追加する</p>
-          </div> -->
         </div>
       </div>
       <%end%>

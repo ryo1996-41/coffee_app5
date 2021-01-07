@@ -7,10 +7,15 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+  #postモデル
   has_many :posts,:dependent=> :destroy
-  #いいね機能
+
+  #likeモデル
   has_many :likes,:dependent=> :destroy
   has_many :post_likes,through: :likes, source: :post
+
+  # commentモデル
+  has_many :comments, :dependent=> :destroy
 
   # ====================自分がフォローしているユーザーとの関連 =============
   has_many :active_relationships,class_name: "Relationship",foreign_key: "follower_id",dependent: :destroy

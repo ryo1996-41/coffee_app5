@@ -18,7 +18,6 @@
 .post-user-info {
   border-bottom: thin solid #E2E2E2;
   padding-bottom: 5px;
-  margin-bottom: 5px;
   img{
     width: 30px;
     height: 30px;
@@ -76,13 +75,48 @@
 //投稿詳細
 .post-show-info{
   padding-bottom: 50px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
-.show-edit{
+.post-show-edit{
   text-align: right;
+}
+.post-show-detail,.comments-index{
+  margin-left: 30px;
 }
 .show-edit-btn{
   color: #8b8886;
   font-family: Arial, "ヒラギノ角ゴ Pro W3";
   padding-right: 10px;
+}
+.post-comment{
+  border-bottom: thin solid #E2E2E2;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.comment-all{
+margin-bottom: 10px;
+margin-top: 5px;
+vertical-align: top;
+}
+.container{
+  .post-comment-form{
+    margin-bottom: 10px;
+   input{
+    width: auto;
+  }
+}
+}
+.comment-image img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+.comment-title{
+  color: #8b8886;
+}
+.comment-detail{
+  vertical-align:top;
+  .comment-name{
+    font-weight: bold;
+  }
 }

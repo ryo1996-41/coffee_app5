@@ -5,7 +5,7 @@
         <div class="show-image">
           <%= image_tag (@user.avatar)if @user.avatar.attached? %>
         </div>
-        <div class="show-detail">
+        <div class="user-show-detail">
           <h2>  <%=@user.name%></h2>
           <strong class="post-counts">
             投稿<%=@user.posts.count%>件

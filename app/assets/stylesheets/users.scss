@@ -18,8 +18,7 @@
 .container {
   margin: 70px auto 0 auto;
   width: 60%;
-  //background-color: whitesmoke;
-.login_form p,.new-form,.post-form p{
+.login_form p, .new-form, .post-form p{
     margin-top:15px;
   }
   input{
@@ -97,13 +96,13 @@
   border-bottom: solid thin #CBCBCB;
   padding-bottom: 40px;
 }
-.show-image,.show-detail,.edit,.user-destroy{
+.show-image,.user-show-detail,.edit,.user-destroy{
   display: inline-block;
 }
 .show-image{
   vertical-align: bottom;
 }
-.show-detail{
+.user-show-detail{
   vertical-align: top;
   margin-left: 40px;
   h2{
@@ -145,9 +144,7 @@ padding-right: 60px;
   padding: 10px;
   border-radius: 10%;
 }
-.user-delete{
 
-}
 .posts-detail,.likes-detail{
   display: inline-block;
   border-bottom: solid thin  #CBCBCB;

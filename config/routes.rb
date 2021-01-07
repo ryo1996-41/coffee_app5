@@ -32,7 +32,9 @@ Rails.application.routes.draw do
 
   delete "likes/:id/destroy"=>"likes#destroy"
   post "likes/:id/create"=>"likes#create"
-  
+
+  post "comment/:id/create" => "comments#create"
+
   # resources :posts do
   #   resource :likes, only: [:create, :destroy]
   # end
