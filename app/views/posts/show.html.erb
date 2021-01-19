@@ -44,10 +44,10 @@
           </div>
           <%end%>
         </div>
-
+          <!--コメント-->
         <div class="comments-index">
           <div class="post-comment-form">
-            <%=form_with model:[@post,@comments], url: "/comment/#{@post.id}/create", method: "Post", local: true do |f|%>
+            <%=form_with model:[@post,@comments], url: "/comment/#{@post.id}/create", method: "POST", local: true do |f|%>
             <%= f.text_area :Content %>
             <%= f.hidden_field :post_id, value: @post.id %>
             <%= f.submit "コメント" %>
