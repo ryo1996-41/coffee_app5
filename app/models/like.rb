@@ -6,4 +6,8 @@ class Like < ApplicationRecord
   validates :user_id,{presence: true}
   validates :post_id,{presence: true}
 
+  # def liked_by?(user)
+  #   likes.where(user_id: user.id).exists?
+  # end
+
 end

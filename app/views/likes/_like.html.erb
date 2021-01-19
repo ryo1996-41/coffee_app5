@@ -1,14 +1,14 @@
 <% if @current_user %>
 <% if post.liked_by?(@current_user) %> <!-- ログインしているユーザーがファボしているか否か -->
 <p>
-  <%=link_to "/likes/#{post.id}/destroy", method: :delete, remote: true, class:"underline" do %>
+  <%=link_to "/likes/#{post.id}/destroy", method: :delete, class:"underline", remote: true do %>
   <span class="fas fa-heart like-btn"></span><!--ファボ済み -->
   <%end%>
   <span><%=post.likes.count%></span>
 </p>
 <% else %>
 <p>
-  <%=link_to "/likes/#{post.id}/create", method: :post, remote: true, class:"underline" do %>
+  <%=link_to "/likes/#{post.id}/create", method: :post, class:"underline", remote: true do %>
   <span class="far fa-heart like-btn"></span><!--ファボしてない-->
   <%end%>
   <span><%=post.likes.count%></span>

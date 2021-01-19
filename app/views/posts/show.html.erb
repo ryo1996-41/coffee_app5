@@ -15,21 +15,12 @@
             <p class="post-time">
               <%=@post.created_at.strftime("%Y-%m-%d %H:%M")%>
             </p>
-            <% if @current_user %>
-            <%if @post.liked_by?(@current_user)%>
-            <p>
-              <%=link_to "/likes/#{@post.id}/destroy", method: :delete, class:"underline" do %>
-              <span class="fas fa-heart like-btn"></span><!--ファボ済み -->
-              <%end%>
-              <%=@likes.count%>
-              <%else%>
-              <%=link_to "/likes/#{@post.id}/create", method: :post, class:"underline" do %>
-              <span class="far fa-heart like-btn"></span><!--ファボしてない-->
-              <%end%>
-              <%=@likes.count%>
-              <%end%>
-              <%end%>
-            </p>
+
+            <!--いいね-->
+            <div class="post-like">
+              <%= render partial: 'likes/like', locals: { post: @post } %>
+            </div>
+            <!--投稿内容-->
             <p><%=@post.region%></p>
             <p><%=@post.roast%></p>
             <p><%=@post.content%></p>
@@ -71,8 +62,8 @@
               <%=image_tag(user.avatar)%>
             </span>
             <span class="comment-detail">
-            <span class="comment-name"><%= user.name %></span>
-            <%= comment.Content %><br>
+              <span class="comment-name"><%= user.name %></span>
+              <%= comment.Content %><br>
             </span>
           </div>
           <% end %>

@@ -6,7 +6,7 @@ def create
     if @comment.save
       redirect_back(fallback_location: "root_path")
    else
-     redirect_back(fallback_location: "root_path")  
+      redirect_back(fallback_location: "root_path")  
    end
  end
 
