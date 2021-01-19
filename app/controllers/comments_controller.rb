@@ -1,21 +1,19 @@
 class CommentsController < ApplicationController
 
-def create
-  @comment = Comment.new(comment_params)
+  def create
+    @comenter = User.all
+    @comment = Comment.new(comment_params)
     @comment.user_id = @current_user.id
-    if @comment.save
-      redirect_back(fallback_location: "root_path")
-   else
-      redirect_back(fallback_location: "root_path")  
-   end
- end
+    @comment.save
+    @comments = Comment.where(post_id: @comment.post_id)
+  end
 
 
-def destroy
-end
+  def destroy
+  end
 
-private
-def comment_params
-  params.require(:comment).permit(:Content, :post_id)
-end
+  private
+  def comment_params
+    params.require(:comment).permit(:Content, :post_id)
+  end
 end

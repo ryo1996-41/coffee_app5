@@ -1,0 +1,13 @@
+  <strong class="comment-title">コメント</strong><br>
+  <% comments.each do |comment| %>
+  <div class="comment-all">
+    <% user = comenter.find_by(id:comment.user_id)%>
+    <span class="comment-image">
+      <%=image_tag(user.avatar)%>
+    </span>
+    <span class="comment-detail">
+      <span class="comment-name"><%= user.name %></span>
+      <%= comment.Content %><br>
+    </span>
+  </div>
+  <% end %>

@@ -44,31 +44,20 @@
           </div>
           <%end%>
         </div>
-          <!--コメント-->
+        <!--コメント-->
         <div class="comments-index">
           <div class="post-comment-form">
-            <%=form_with model:[@post,@comments], url: "/comment/#{@post.id}/create", method: "POST", local: true do |f|%>
-            <%= f.text_area :Content %>
+            <%=form_with model:[@post,@comments], url: "/comment/#{@post.id}/create", method: "POST", remote: true do |f|%>
+            <%= f.text_area :Content, placeholder: "コメントを入力" %>
             <%= f.hidden_field :post_id, value: @post.id %>
             <%= f.submit "コメント" %>
-            <%end%>
+            <% end %>
           </div>
-
-          <strong class="comment-title">コメント</strong><br>
-          <% @comments.each do |comment|%>
-          <div class="comment-all">
-            <% user = @comenter.find_by(id:comment.user_id)%>
-            <span class="comment-image">
-              <%=image_tag(user.avatar)%>
-            </span>
-            <span class="comment-detail">
-              <span class="comment-name"><%= user.name %></span>
-              <%= comment.Content %><br>
-            </span>
-          </div>
-          <% end %>
+        <div class="post-comments">
+          <%= render partial: 'comments/comment', locals: { comments: @comments, comenter: @comenter } %>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
