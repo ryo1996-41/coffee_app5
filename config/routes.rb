@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   post "users/login"=>"users#login"
   get "logout"=>"users#logout"
   post "users/:id/destroy"=>"users#destroy"
-  post "users/:id/:id_update"=>"users#update"
+  post "users/:id/update"=>"users#update"
   get 'users/:id'=>"users#show"
   get "users/:id/show_follow" => "users#show_follow"
   get "users/:id/show_follower" => "users#show_follower"
@@ -35,15 +35,8 @@ Rails.application.routes.draw do
 
   post "comment/:id/create" => "comments#create"
 
-  # resources :posts do
-  #   resource :likes, only: [:create, :destroy]
-  # end
-
-  # post "follow/:id" => "relationships#follow", as: "follow"
-  # post "unfollow/:id" => "relationships#unfollow", as: "unfollow"
-
   get "top"=>"home#top"
   root "home#top"
   resources :relationships, only: [:create, :destroy]
-  # root 'application#hello'
+
 end

@@ -5,9 +5,9 @@
         <div class = "edit-title">
           <h4>編集</h4>
         </div>
-        <div class = "edit-form">
+        <div class="edit-form">
           <div class="form">
-            <%= form_with model:@user, url:"#{@user.id}_update", method:'POST', local:true do |form| %>
+            <%= form_with model: @user, url: "/users/#{@user.id}/update", method: 'POST', local: true do |form| %>
             <p>名前</p>
             <%= form.text_field :name %>
             <span class="presence-error-message">
@@ -15,7 +15,6 @@
               <%=@user.errors.full_messages_for(:name).first%>
               <%end%>
             </span>
-
             <p>メールアドレス</p>
             <%= form.email_field :email %>
             <span class="presence-error-message">
@@ -23,14 +22,13 @@
               <%=@user.errors.full_messages_for(:email).first%>
               <%end%>
             </span>
-
             <p>自己紹介</p>
             <%= form.text_area :introduce%>
             <p>画像</p>
             <%=form.file_field :avatar%>
-          </div>
-          <div class = "reserve">
-            <%=form.submit "保存"%>
+            <div class = "reserve">
+              <%=form.submit "保存"%>
+            </div>
           </div>
           <%end%>
           <div class="user-destroy">

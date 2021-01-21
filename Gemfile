@@ -43,3 +43,6 @@ gem 'bcrypt'
 gem 'rails-i18n'
 #ajax機能実装
 gem 'jquery-rails'
+#画像のリサイズ
+gem 'image_processing'
+gem 'mini_magick'
