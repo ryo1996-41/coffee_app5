@@ -30,10 +30,12 @@
               <%=post.content%>
             </p>
             <div class="seemore">
-              <%=link_to("See more...", "/posts/#{post.id}", class:"underline seemore-font") %>
+              <%=link_to("もっと見る...", "/posts/#{post.id}", class:"underline seemore-font") %>
             </div>
             <div class="post-comments">
-              <p>コメントを表示する</p>
+              <p>
+                コメント<%= post.comments.count %>件
+              </p>
             </div>
             <!-- <div class="add-comments">
             <p>コメントを追加する</p>
