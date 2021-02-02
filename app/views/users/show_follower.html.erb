@@ -9,7 +9,7 @@
         <div class="index-image">
           <%= image_tag(user.avatar)if user.avatar.attached? %>
         </div>
-        <div class=" index-detail ">
+        <div class="index-detail">
           <%=link_to(user.name, "/users/#{user.id}", class:"underline index-name name-border") %><br>
           <p class="index-introduce"> <%= user.introduce if user.introduce %></p><br>
         </div>

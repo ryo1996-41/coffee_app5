@@ -9,7 +9,7 @@
           </div>
 
           <div class="post-image">
-            <%=image_tag(@post.image)%><br>
+            <%=image_tag(@post.image) if @post.image.attached? %><br>
           </div>
           <div class="post-show-detail">
             <p class="post-time">
@@ -47,7 +47,7 @@
         <!--コメント-->
         <div class="comments-index">
           <div class="post-comment-form">
-            <%=form_with model:[@post,@comments], url: "/comment/#{@post.id}/create", method: "POST", remote: true do |f|%>
+            <%= form_with model:[@post, @comments], url: "/comment/#{@post.id}/create", method: "POST", remote: true do |f| %>
             <%= f.text_area :Content, placeholder: "コメントを入力" %>
             <%= f.hidden_field :post_id, value: @post.id %>
             <%= f.submit "コメント" %>

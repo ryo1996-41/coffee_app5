@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "posts/:id/follow_index"=>"posts#follow_index"
   get 'posts/:id'=>"posts#show"
   post "posts/:id/destroy"=>"posts#destroy"
-  post 'posts/:id/:id_update'=>'posts#update'
+  post 'posts/:id/update'=>'posts#update'
 
 
   post "users/create"  => "users#create"

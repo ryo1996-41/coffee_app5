@@ -6,7 +6,7 @@
       </div>
       <div class = "new-form">
         <div class="form">
-          <%= form_with model:@user, url:users_create_path , method: 'POST', local:true do |form| %>
+          <%= form_with model: @user, url: users_create_path , method: 'POST', local: true do |form| %>
           <p>名前</p>
           <%= form.text_field :name %>
           <span class="presence-error-message">
@@ -34,6 +34,11 @@
           <div class="mypage-image">
             <p>画像</p>
             <%=form.file_field :avatar%>
+            <span class="presence-error-message">
+            <%if @user.errors.include?(:avatar)%>
+            <%=@user.errors.full_messages_for(:avatar).first%>
+            <%end%>
+            </span>
           </div>
 
           <div class = "reserve">

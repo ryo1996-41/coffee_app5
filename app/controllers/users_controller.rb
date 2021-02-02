@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice]="ユーザー登録をしました"
+      flash[:notice] = "ユーザー登録をしました"
       redirect_to("/users/#{@user.id}")
     else
       render("users/new")
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user=User.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
   end
 
   def login_form
@@ -39,11 +39,11 @@ class UsersController < ApplicationController
   def login
     @user = User.find_by(email:params[:email])
     if @user && @user.authenticate(params[:password])
-      session[:user_id]=@user.id
-      flash[:notice]="ログインしました"
+      session[:user_id] = @user.id
+      flash[:notice] = "ログインしました"
       redirect_to("/users/index")
     else
-      flash[:alert]="メールアドレスまたはパスワードが間違っています"
+      flash[:alert] = "メールアドレスまたはパスワードが間違っています"
       render("users/login_form")
     end
   end
@@ -52,24 +52,24 @@ class UsersController < ApplicationController
     @user = User.find_by(id:params[:id])
     @user.update(user_params)
     if @user.save
-      flash[:notice]="編集しました"
+      flash[:notice] = "編集しました"
       redirect_to("/users/#{@user.id}")
     else
-      render("users/#{@user.id}/edit")
+      render("users/edit")
     end
   end
 
   def destroy
     @user = User.find_by(id:params[:id])
     if @user.destroy
-      session[:user_id]=nil
+      session[:user_id] = nil
       redirect_to("/top")
     end
   end
 
   def logout
-    session[:user_id]=nil
-    flash[:notice]="ログアウトしました"
+    session[:user_id] = nil
+    flash[:notice] = "ログアウトしました"
     redirect_to("/top")
   end
 
